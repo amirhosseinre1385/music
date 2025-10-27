@@ -1,0 +1,48 @@
+body{
+    direction: rtl;
+    background-color: #313131;
+}
+.top{
+    margin-top: 25px;
+    text-align: center;
+    color: aquamarine;
+}
+.stage img{
+    width: 70%;
+    margin-top: 40px;
+    margin-right: 167px;
+}
+.col{
+    margin-top: 30px;
+    border: 2px solid #686868;
+}
+.col button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 300px;
+    background-color: #0dae50;
+    margin: 10px;
+}
+.col button:hover{
+    transform: scale(1.2);
+}
+.show-ticket{
+    color: aquamarine;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+.col-2{
+    margin: 20px 10px;
+    border-radius: 3px;
+}
+.col-2 button{
+    background-color: #cd2525;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.col-2 button:hover{
+    transform: scale(1.2);
+}
