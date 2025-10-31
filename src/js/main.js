@@ -2,101 +2,97 @@ const products = [
     {
         id: 1,
         name: 'استاد شجریان آهنگ در دل و جان خانه کردی',
-        like: 289,
         played: 289,
         image: './src/images/img1.jfif',
+        music: './src/music/1.mp3',
+        a: './src/page/download.html'
     },
     {
         id: 2,
         name: 'استاد شجریان آهنگ شیدایی',
-        like: 329,
         played: 454,
         image: './src/images/img2.jfif',
+        music: './src/music/2.mp3'
     },
     {
         id: 3,
         name: ' استاد همایون شجریان آهنگ عاشقی',
-        like: 259,
         played: 267,
         image: './src/images/img3.jpg',
+        music: './src/music/3.mp3'
     },
     {
         id: 4,
         name: ' استاد همایون شجریان آهنگ زلف بر باد مده',
-        like: 278,
         played: 389,
         image: './src/images/img4.jpg',
+        music: './src/music/4.mp3'
     },
     {
         id: 5,
         name: 'استاد همایون شجریان آهنگ قلاب',
-        like: 289,
         played: 289,
         image: './src/images/img7.jfif',
+        music: './src/music/5.mp3'
     },
     {
         id: 6,
         name: 'استاد همایون شجریان آهنگ خوب شد',
-        like: 289,
         played: 289,
         image: './src/images/img6.jfif',
+        music: './src/music/6.mp3'
     },
     {
         id: 7,
         name: 'استاد همایون شجریان آهنگ با من صنما',
-        like: 289,
         played: 289,
         image: './src/images/img8.jpg',
+        music: './src/music/7.mp3'
     },
     {
         id: 8,
         name: 'استاد همایون شجریان آهنگ مدارا',
-        like: 289,
         played: 289,
         image: './src/images/img9.jfif',
+        music: './src/music/8.mp3'
     }
 ]
 
 
 const items = () => {
-    const productDiv = document.querySelector('.row')
+    const productDiv = document.querySelector('.row');
     productDiv.innerHTML = ''
 
-    products.forEach((item, index) => {
-        productDiv.innerHTML +=
+    products.forEach((item) => {
+        productDiv.innerHTML = products.map(item=>
         `
         <div class="col-5 bg-light p-3 text-center">
-            <img src=${item.image}
             <span class="names">${item.name}</span>
+            <img src=${item.image}>
             <br>
+            <audio controls>
+                <source src=${item.music} type="audio/mp3">
+            </audio>
             <a href="#">بقیه آثار</a>
             <div class="down-part">
-                <div class="like">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
-                    </svg>
-                    <span>${item.like}</span>
+                <div>
+                    <i class="far fa-heart" id="like-btn-heart"></i>
+                    <span id="hearts-count">0</span>
                 </div>
                 <div class="played">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
                     <span>${item.played}</span>
                 </div>
             </div>
             <hr>
             <div class="download">
-                <button> دانلود با کیفیت 128 </button>
-            </div>
-            <div class="download">
-                <button> دانلود با کیفیت 320 </button>
+                <a href=${item.a} target="_blank">جهت دانلود کلیک کنید</a>
             </div>
     </div>
-        `
+        `).join('');
     })
 }
 
@@ -108,7 +104,7 @@ const input = document.querySelector('.search-input');
 
 btn.addEventListener('click', function () {
     search.classList.toggle('active')
-})
+});
 
 const paletColor = document.querySelector('.palet');
 const button = document.querySelector('.changeColor');
@@ -119,5 +115,15 @@ button.addEventListener('click', function () {
 })
 
 function changeColor(id){
-    document.body.style.background = document.getElementById(id).innerHTML ;
-}
+    document.body.style.background = document.getElementById(id).innerHTML
+};
+
+document.getElementById('like-btn-heart').onclick = function() {
+  document.getElementById('like-btn-heart').setAttribute('class', 'fas fa-heart animate__animated animate__rubberBand animate__slow');
+  document.getElementById('like-btn-heart').style.color = '#ff0000ff';
+  document.getElementById('hearts-count').style.color = '#fff';
+  document.getElementById('like-btn-heart').style.pointerEvents = 'none';
+  let current_likes_count = parseInt(document.getElementById('hearts-count').textContent);
+  let current_likes_count_plus_one = current_likes_count + 1;
+  document.getElementById('hearts-count').innerHTML = current_likes_count_plus_one;
+};

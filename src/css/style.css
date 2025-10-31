@@ -128,11 +128,15 @@ a{
     background-color: #ffa500;
     color: #ffa500;
 }
+.top-center{
+    display: flex;
+    margin: auto;
+    margin-top: -15px;
+}
 .box{
     display: flex;
     gap: 70px;
-    margin-right: 146px;
-    margin-top: -20px;
+    margin: auto;
 }
 .box a{
     text-indent: -99999px;
@@ -151,7 +155,7 @@ a{
     width: 300px;
     height: 300px;
     border:2px solid #282828;
-    margin: 20px 42px 20px 0;
+    margin: auto;
 }
 .col-5 span{
     display: flex;
@@ -175,24 +179,25 @@ a{
     display: flex;
     justify-content: space-between;
 }
-.like , .played{
+.played{
     display: flex;
 }
-.like svg , .played svg{
+.played svg{
     width: 20px;
     margin-left: 10px;
 }
-.download button{
-    border: none;
+.download a{
+    display: inline-block;
+    align-items: center;
     background-color: #282828;
     color: #50a589;
     margin: 10px;
-    width: 200px;
-    height: 35px;
+    width: 230px;
+    height: 40px;
     border-top-right-radius: 6px;
     border-bottom-left-radius: 6px;
 }
-.download button:hover{
+.download a:hover{
     transform: scale(0.9) rotate(2deg);
 }
 .to-top svg{
@@ -203,4 +208,7 @@ a{
     position: fixed;
     right: 25px;
     bottom: 25px;
+}
+audio{
+    margin-top: 20px;
 }
